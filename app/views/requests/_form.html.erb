@@ -1,0 +1,37 @@
+<%= form_for(request , remote: true) do |form| %>
+  <% if request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(request.errors.count, "erreur") %> interdit cette demande d'ètre enregistrée:</h2>
+
+      <ul>
+        <% request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :biography %>
+    <%= form.text_area :biography %>
+  </div>
+
+  <div>
+    <%= form.submit "Sauvegarder" %>
+  </div>
+<% end %>
