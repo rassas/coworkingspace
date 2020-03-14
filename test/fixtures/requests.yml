@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  phone: MyString
+  biography: MyText
+  status: 1
+  confirmed_at: 2020-03-14 21:17:15
+  coworking_space: one
+
+two:
+  name: MyString
+  email: MyString
+  phone: MyString
+  biography: MyText
+  status: 1
+  confirmed_at: 2020-03-14 21:17:15
+  coworking_space: two

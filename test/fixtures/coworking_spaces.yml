@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  workstations_limit: 1
+
+two:
+  name: MyString
+  workstations_limit: 1
