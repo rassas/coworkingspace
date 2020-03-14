@@ -5,8 +5,11 @@ class RequestsController < ApplicationController
 
   def create
     @request = CoworkingSpace.last.requests.new(request_params)
-    @request.save
-    redirect_to root_path
+    if @request.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
