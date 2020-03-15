@@ -53,3 +53,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# sidekiq
+gem 'sidekiq', '~> 5.2.3'
+gem 'sidekiq-cron', '~> 1.0.4'
+gem 'sidekiq-unique-jobs', '~> 6.0.7'
+gem 'rufus-scheduler', '~> 3.5.2'
+gem 'sidekiq-failures', '~> 1.0.0'
