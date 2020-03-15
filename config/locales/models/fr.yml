@@ -13,5 +13,14 @@ fr:
             email:
               not_found: "n'a pas été trouvé(e)"
               already_confirmed: "a déjà été validé(e)"
+              blank: "ne peut pas être vide"
             confirmation_token:
-              blank: "vide"
+              blank: "ne peut pas être vide"
+            phone:
+              blank: "ne peut pas être vide"
+            email:
+              blank: "ne peut pas être vide"
+            biography:
+              blank: "ne peut pas être vide"
+            name:
+              blank: "ne peut pas être vide"

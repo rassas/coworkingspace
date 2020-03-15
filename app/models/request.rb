@@ -1,7 +1,7 @@
 class Request < ApplicationRecord
   belongs_to :coworking_space
 
-  validates_presence_of :phone, :email, :biography, :name, message: "ne peut pas être vide"
+  validates_presence_of :phone, :email, :biography, :name, message: :blank
 
   before_create :generate_confirmation_token
   after_create :send_confirmation_instructions

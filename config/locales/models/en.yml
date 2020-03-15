@@ -13,5 +13,14 @@ en:
             email:
               not_found: "not found"
               already_confirmed: "was already confirmed"
+              blank: "can't be blank"
             confirmation_token:
-              blank: ""
+              blank: "can't be blank"
+            phone:
+              blank: "can't be blank"
+            email:
+              blank: "can't be blank"
+            biography:
+              blank: "can't be blank"
+            name:
+              blank: "can't be blank"
