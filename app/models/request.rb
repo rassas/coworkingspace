@@ -3,6 +3,13 @@ class Request < ApplicationRecord
 
   validates_presence_of :phone, :email, :biography, :name, message: :blank
 
+  enum status: {
+    unconfirmed: 0,
+    confirmed: 1,
+    accepted: 2,
+    expired: 3
+  }
+
   before_create :generate_confirmation_token
   after_create :send_confirmation_instructions
 
@@ -38,16 +45,11 @@ class Request < ApplicationRecord
   # Confirm a request by setting it's confirmed_at to actual time.
   # If the request is already confirmed, add an error to email field.
   def confirm!
-    unless confirmed?
-      update(confirmed_at: Time.now.utc)
+    unless !!confirmed_at
+      update(confirmed_at: Time.now.utc, status: :confirmed)
     else
       errors.add(:email, :already_confirmed)
     end
-  end
-
-  # Verifies whether a request is confirmed or not
-  def confirmed?
-    !!confirmed_at
   end
 
   def self.confirm_by_token(confirmation_token)
@@ -79,5 +81,15 @@ class Request < ApplicationRecord
       request.errors.add(:email, :already_confirmed)
     end
     request
+  end
+
+  def accept!
+    if unconfirmed? && !!!confirmed_at
+      errors.add(:email, :not_confirmed)
+    elsif CoworkingSpace.last.workstations_limit <= Request.accepted.count
+      errors[:base] << I18n.t("errors.coworking_space_has_reached_it_limit")
+    else
+      update(status: :accepted, accepted_at: Time.now.utc)
+    end
   end
 end

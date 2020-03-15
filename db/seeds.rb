@@ -1,1 +1,1 @@
-CoworkingSpace.find_or_create_by(name: "GoWork")
+CoworkingSpace.find_or_create_by(name: "GoWork", workstations_limit: 50)

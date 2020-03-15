@@ -5,13 +5,15 @@ class CreateRequests < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :phone
       t.text :biography
-      t.integer :status
+      t.integer :status, default: 0
       
       t.datetime :confirmed_at
       t.string :confirmation_token
       t.datetime :confirmation_sent_at
 
       t.references :coworking_space, null: false, foreign_key: true
+
+      t.datetime :accepted_at
 
       t.timestamps
     end
