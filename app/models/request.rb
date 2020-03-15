@@ -84,10 +84,12 @@ class Request < ApplicationRecord
   end
 
   def accept!
-    if unconfirmed? && !!!confirmed_at
+    if unconfirmed? && !confirmed_at
       errors.add(:email, :not_confirmed)
     elsif CoworkingSpace.last.workstations_limit <= Request.accepted.count
       errors[:base] << I18n.t("errors.coworking_space_has_reached_it_limit")
+    elsif Request.confirmed.where("confirmed_at < ?", confirmed_at).count > 0
+      errors[:base] << I18n.t("errors.respect_first_come_first_served_pricipale")
     else
       update(status: :accepted, accepted_at: Time.now.utc)
     end

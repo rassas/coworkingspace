@@ -1,3 +1,4 @@
 fr:
   errors:
     coworking_space_has_reached_it_limit: "L'espace de co-working a atteint sa limite"
+    respect_first_come_first_served_pricipale: "Les demandes doivent respecter le principe du premier arrivé, premier servi"
