@@ -13,22 +13,22 @@
 
   <div>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: :true %>
   </div>
 
   <div>
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, required: :true %>
   </div>
 
   <div>
     <%= form.label :phone %>
-    <%= form.text_field :phone %>
+    <%= form.text_field :phone, required: :true %>
   </div>
 
   <div>
     <%= form.label :biography %>
-    <%= form.text_area :biography %>
+    <%= form.text_area :biography, required: :true %>
   </div>
 
   <div>
