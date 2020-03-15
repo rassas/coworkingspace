@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2020_03_14_201715) do
     t.text "biography"
     t.integer "status"
     t.datetime "confirmed_at"
+    t.string "confirmation_token"
+    t.datetime "confirmation_sent_at"
     t.integer "coworking_space_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

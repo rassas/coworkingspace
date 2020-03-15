@@ -1,0 +1,17 @@
+fr:
+  activerecord:
+    models:
+      request: "Demande"
+    attributes:
+      request:
+        email: "Email"
+        name: "Nom"
+    errors:
+      models:
+        request:
+          attributes:
+            email:
+              not_found: "n'a pas été trouvé(e)"
+              already_confirmed: "a déjà été validé(e)"
+            confirmation_token:
+              blank: "vide"

@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      request: "request"
+    attributes:
+      request:
+        email: "Email"
+        name: "Name"
+    errors:
+      models:
+        request:
+          attributes:
+            email:
+              not_found: "not found"
+              already_confirmed: "was already confirmed"
+            confirmation_token:
+              blank: ""

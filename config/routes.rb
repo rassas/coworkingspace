@@ -2,5 +2,12 @@ Rails.application.routes.draw do
   root to: 'requests#new'
 
   resources :requests, only: [:create]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  scope 'request' do
+    resources :confirmations, only: [:new, :create] do
+      collection do
+        get :confirmation
+      end
+    end
+  end
 end
