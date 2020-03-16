@@ -4,4 +4,9 @@ class ConfirmationMailer < ApplicationMailer
     @request = request
     mail(to: request.email, subject: "Instructions de confirmation")
   end
+
+  def reconfirmation_instructions(request)
+    @request = request
+    mail(to: request.email, subject: "Instructions de reconfirmation")
+  end
 end

@@ -42,14 +42,16 @@ class Request < ApplicationRecord
     ConfirmationMailer.confirmation_instructions(self).deliver
   end
 
+  def send_reconfirmation_instructions
+    self.confirmation_token = generate_unique_secure_confirmation_token()
+    self.confirmation_sent_at = Time.now.utc
+    save(validate: false)
+    ConfirmationMailer.reconfirmation_instructions(self).deliver
+  end
+
   # Confirm a request by setting it's confirmed_at to actual time.
-  # If the request is already confirmed, add an error to email field.
   def confirm!
-    unless !!confirmed_at
-      update(confirmed_at: Time.now.utc, status: :confirmed)
-    else
-      errors.add(:email, :already_confirmed)
-    end
+    update(confirmed_at: Time.now.utc, status: :confirmed)
   end
 
   def self.confirm_by_token(confirmation_token)

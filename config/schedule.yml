@@ -1,0 +1,8 @@
+reconfirmation_worker_every_midnight:
+  cron: "0 0 * * *"
+  class: "ReconfirmationWorker"
+  queue: default
+expiration_worker_every_midnight:
+  cron: "0 0 * * *"
+  class: "ExpirationWorker"
+  queue: default

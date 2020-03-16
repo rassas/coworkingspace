@@ -1,0 +1,7 @@
+<p>Hello <%= @request.name %>!</p>
+
+<p>
+  You need to
+  <%= link_to 'Reconfirm', confirmation_confirmations_url(confirmation_token: @request.confirmation_token) %>
+  your request if you still interested before midnight, otherwise it will be removed from the waiting list
+</p>
