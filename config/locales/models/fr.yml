@@ -6,6 +6,8 @@ fr:
       request:
         email: "Email"
         name: "Nom"
+        phone: "Téléphone"
+        biography: "Biographie"
     errors:
       models:
         request:

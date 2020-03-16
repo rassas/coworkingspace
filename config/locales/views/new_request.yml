@@ -1,0 +1,5 @@
+fr:
+  views:
+    new_request:
+      fill_the_form: "Remplissez le formulaire pour rejoindre la liste d'attente"
+      save: "Sauvegarder"

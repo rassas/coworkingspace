@@ -5,12 +5,29 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="home-hero">
+        <div class="hexagon">
+          <div class="hex hex1">
+            <svg width="10" height="9" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg"><title>Hexagon</title><path d="M3.362 1.265l3.878.407.81 3.814-3.376 1.95-2.898-2.61z" stroke-width="2" stroke="#BBA798" fill="#BBA798" fill-rule="evenodd"></path></svg>
+          </div>
+          <div class="hex hex2">
+            <svg width="10" height="9" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg"><title>Hexagon</title><path d="M3.362 1.265l3.878.407.81 3.814-3.376 1.95-2.898-2.61z" stroke-width="2" stroke="#BBA798" fill="#BBA798" fill-rule="evenodd"></path></svg>
+          </div>
+        </div>
+        <div class="hero-content">
+          <h1 class="text-center"><%= t("views.layout.join_us") %></h1>
+          <h2 class="text-center"><%= t("views.layout.top_ten_coworking_space") %></h2>
+        </div>
+      </div>
+      <%= render '/shared/notices' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

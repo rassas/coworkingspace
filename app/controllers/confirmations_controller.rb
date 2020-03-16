@@ -19,6 +19,7 @@ class ConfirmationsController < ApplicationController
   def confirmation
     @request = Request.confirm_by_token(params[:confirmation_token])
     if @request.errors.empty?
+      flash[:notice] = "Email confirmer avec succes"
       redirect_to root_path()
     else
       render :new
