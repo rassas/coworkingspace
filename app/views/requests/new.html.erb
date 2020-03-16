@@ -1,1 +1,25 @@
-<%= render  "form", request: @request %>
+<div class="container-fluid">
+  <div class="home-hero">
+    <div class="hexagon">
+      <div class="hex hex1">
+        <svg width="10" height="9" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg"><title>Hexagon</title><path d="M3.362 1.265l3.878.407.81 3.814-3.376 1.95-2.898-2.61z" stroke-width="2" stroke="#BBA798" fill="#BBA798" fill-rule="evenodd"></path></svg>
+      </div>
+      <div class="hex hex2">
+        <svg width="10" height="9" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg"><title>Hexagon</title><path d="M3.362 1.265l3.878.407.81 3.814-3.376 1.95-2.898-2.61z" stroke-width="2" stroke="#BBA798" fill="#BBA798" fill-rule="evenodd"></path></svg>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h1 class="text-center">Rejoindre nous!</h1>
+      <h2 class="text-center">One of the top 10 coworking spaces in the world</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 request-form">
+      <h3 class="text-center">Remplissez le formulaire pour rejoindre la liste d'attente</h3>
+      <%= render  "form", request: @request %>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
